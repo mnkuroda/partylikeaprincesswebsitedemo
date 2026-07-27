@@ -1218,6 +1218,16 @@ a:hover {
   overflow: hidden;
 }
 
+.studio-gallery--single {
+  grid-template-columns: 1fr;
+}
+
+.studio-gallery--single img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .studio-gallery img {
   width: 100%;
   aspect-ratio: 1;
