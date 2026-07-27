@@ -113,9 +113,13 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  max-width: 1200px;
-  margin-inline: auto;
+  width: 100%;
   padding: 0.5rem clamp(1rem, 3vw, 2rem);
+}
+
+.utility-bar-inner p {
+  margin: 0;
+  text-align: left;
 }
 
 .utility-bar-links {
@@ -134,10 +138,9 @@ a:hover {
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1.5rem;
-  max-width: 1200px;
-  margin-inline: auto;
+  width: 100%;
   padding: 0.75rem clamp(1rem, 3vw, 2rem);
   min-height: var(--nav-height);
 }
@@ -148,6 +151,7 @@ a:hover {
   gap: 0.5rem;
   color: var(--color-plum);
   flex-shrink: 0;
+  margin-right: auto;
 }
 
 .nav-logo:hover {
@@ -728,7 +732,7 @@ a:hover {
 
 .event-date {
   flex-shrink: 0;
-  width: 64px;
+  width: 72px;
   text-align: center;
   padding: 0.75rem 0.5rem;
   background: linear-gradient(135deg, var(--color-rose), var(--color-plum-light));
@@ -738,10 +742,11 @@ a:hover {
 
 .event-date-month {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  opacity: 0.92;
 }
 
 .event-date-day {
@@ -750,6 +755,16 @@ a:hover {
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.1;
+  margin: 0.15rem 0;
+}
+
+.event-date-weekday {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .event-details h3 {
@@ -1234,6 +1249,175 @@ a:hover {
   object-fit: cover;
 }
 
+/* Instagram feed widget */
+.section-instagram {
+  background: var(--color-plum);
+  padding-top: 2.5rem;
+  padding-bottom: 2.75rem;
+  color: var(--color-cream);
+}
+
+.instagram-feed {
+  width: 100%;
+}
+
+.instagram-feed-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.instagram-feed-header:hover .instagram-feed-avatar-hover {
+  opacity: 1;
+}
+
+.instagram-feed-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 84px;
+  height: 84px;
+}
+
+.instagram-feed-avatar {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.instagram-feed-avatar-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(92, 61, 94, 0.55);
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.instagram-feed-avatar-hover svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.instagram-feed-header-text {
+  min-width: 0;
+  padding-top: 0.15rem;
+}
+
+.instagram-feed-title-row h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  letter-spacing: 0.01em;
+}
+
+.instagram-feed-bio {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 248, 251, 0.88);
+}
+
+.instagram-feed-carousel {
+  margin-top: 0.25rem;
+}
+
+.instagram-feed-viewport {
+  overflow: hidden;
+}
+
+.instagram-feed-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.instagram-feed-item {
+  position: relative;
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--color-blush-deep);
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.instagram-feed-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.instagram-feed-item-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(92, 61, 94, 0.82);
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.instagram-feed-item-overlay svg {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.instagram-feed-item:hover img,
+.instagram-feed-item:focus-visible img {
+  transform: scale(1.04);
+}
+
+.instagram-feed-item:hover .instagram-feed-item-overlay,
+.instagram-feed-item:focus-visible .instagram-feed-item-overlay {
+  opacity: 1;
+}
+
+.instagram-feed-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  padding: 0;
+}
+
+.instagram-feed-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 248, 251, 0.35);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.instagram-feed-dot.is-active {
+  background: var(--color-cream);
+  transform: scale(1.05);
+}
+
+.instagram-feed-dot:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .nav-toggle {
@@ -1307,14 +1491,18 @@ a:hover {
   .event-date {
     width: auto;
     display: inline-flex;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0.1rem;
     align-items: center;
     margin-inline: auto;
   }
 
-  .event-date-month,
   .event-date-day {
-    display: inline;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
+  }
+
+  .instagram-feed-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
