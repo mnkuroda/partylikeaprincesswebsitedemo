@@ -1092,8 +1092,8 @@ a:hover {
 .cta-banner {
   padding: 4rem 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--color-plum) 0%, var(--color-plum-light) 50%, var(--color-rose) 100%);
-  color: var(--color-white);
+  background: linear-gradient(135deg, #5c4310 0%, #7a5c18 45%, #9a7b2e 100%);
+  color: var(--color-cream);
 }
 
 .cta-banner h2 {
@@ -1109,13 +1109,14 @@ a:hover {
 }
 
 .cta-banner .btn-primary {
-  background: var(--color-white);
-  color: var(--color-plum);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  background: var(--color-cream);
+  color: #5c4310;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .cta-banner .btn-primary:hover {
-  color: var(--color-rose);
+  color: var(--color-plum);
+  background: var(--color-white);
 }
 
 /* Partners */
